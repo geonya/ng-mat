@@ -11,10 +11,19 @@ const routes: Routes = [
   { path: 'blog', component: BlogPageComponent },
   { path: 'blog/my-best-blog', component: PostComponent },
   { path: 'admin/blog', component: AdminBlogComponent },
+  {
+    path: '**',
+    redirectTo: '',
+  },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    RouterModule.forRoot(routes, {
+      enableTracing: false,
+      onSameUrlNavigation: 'reload',
+    }),
+  ],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}
