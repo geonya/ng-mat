@@ -21,7 +21,7 @@ const routes: Routes = [
   imports: [
     RouterModule.forRoot(routes, {
       enableTracing: false,
-      onSameUrlNavigation: 'reload',
+      useHash: true,
     }),
   ],
   exports: [RouterModule],
